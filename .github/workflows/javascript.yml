@@ -2,7 +2,8 @@ name: Build, test, and push Halloween Docker image
 
 on:
   push:
-    branches:  "main" 
+    branches: 
+      - "main" 
   
 jobs:
   build-test-and-push:
@@ -15,7 +16,7 @@ jobs:
 
       # 2) Set an IMAGE_NAME env variable like: rosinebelle/halloween-httpd
       - name: Set image name
-       run: echo "IMAGE_NAME=${{ secrets.DOCKERHUB_USERNAME }}/halloween-httpd" >> $GITHUB_ENV
+        run: echo "IMAGE_NAME=${{ secrets.DOCKERHUB_USERNAME }}/halloween-httpd" >> $GITHUB_ENV
 
       # 3) Build the Docker image from your Dockerfile
       - name: Build Docker image
@@ -38,4 +39,3 @@ jobs:
       # 6) Push the image to Docker Hub
       - name: Push image to Docker Hub
         run: docker push $IMAGE_NAME:latest
-
