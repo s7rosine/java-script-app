@@ -1,4 +1,4 @@
-name: Build, test, and push Halloween Docker image
+name: Build, test, push and Deploy Halloween Docker image
 
 on:
   push:
