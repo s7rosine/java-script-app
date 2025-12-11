@@ -25,7 +25,7 @@ jobs:
       # 4) Run the container to make sure it starts and serves HTTP
       - name: Run container for test
         run: |
-          # Start the container in the background, map port 8081 on runner -> 3000 in container
+          # Start the container in the background, map port 8080 on runner -> 3000 in container
           docker run -d --name javascript-app-test -p 8080:3000 $IMAGE_NAME:latest
           
           # Wait for app to start
